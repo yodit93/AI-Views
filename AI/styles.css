@@ -42,15 +42,17 @@ header {
 
 #ss {
   margin: 1% 0;
+  width: 159px;
+  height: 35px;
+  border-radius: 6px 0px 0px 0px;
+  background: linear-gradient(90deg, #240466 0%, #4708CC 100%);
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-@media (min-width: 768px) {
-  #navbarCollapse {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-}
 
 #logo {
   width: 3rem;
@@ -198,10 +200,6 @@ main {
   display: none; /* Hides the default dropdown icon */
 }
 
-main {
-  margin-bottom: 7rem;
-}
-
 .para {
   font-size: 1.8rem;
   font-weight: 800;
@@ -225,11 +223,41 @@ main {
   margin: 0;
 }
 
-@media only screen and (max-width: 767px) {
-  
+hr {
+  opacity: 0.55;
+  border: 1px solid #f5f5f5;
+  margin:  0 1rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  #logo {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .navbar-collapse {
+    position: absolute; /* Make the collapse menu absolute */
+    top: 100%; /* Position it below the navbar */
+    left: 0; /* Align it to the left edge */
+    right: 0;
+    background-color: #6830c2;
+    opacity: 0.9;
+    z-index: 1030; /* Ensure it appears above other content */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .navbar-nav {
+    align-items: flex-end;
+  }
+
   .intro, .para {
     font-size: 1.3rem;  
   }
+
   .contractor-btn-cont {
     width: 160px;
     height: 45px;
@@ -239,13 +267,26 @@ main {
     font-size: 15px;
   }
 
- #videoAI {
+  main {
+    margin-bottom: 7rem;
+  }
+
+  #videoAI {
     height: 40vh;
     margin: auto;
     margin-bottom: 5%;
+  } 
+
+  .bottom-nav, .last {
+    font-size: 15px;
   }
 
-  .bottom-nav {
-    font-size: 10px;
+}
+
+@media (min-width: 768px) {
+  #navbarCollapse {
+    display: flex;
+    justify-content: flex-end;
   }
+
 }
