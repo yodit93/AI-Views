@@ -1,21 +1,42 @@
-body {
-    height: au100vhto;
+@media screen and (min-width: 768px) {
+    .container-with-background {
+        background-color:#4859F2;
+        background-image: url("https://i.ibb.co/K66jJkY/fondo.png");
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat;
+        height: 40vh;
+    }
+    
+    header {
+        background: none;
+    }
+
+    .empty-with-background {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20rem 0;
+    }
+
+    .empty-with-background img {
+        mix-blend-mode: multiply;  
+    }
+
+    main {
+        background: none;
+        margin: 6.5rem 0;
+    }  
 }
+
 
 .card-container {
     display: flex;
     justify-content: center;
     gap: 17px;
-    padding: 0 70px;
+    margin-top: 2rem;
 }
 
-@media screen and (max-width: 768px) {
-    .card-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-}
 
 .price-card {
     width: 244px;
@@ -67,3 +88,24 @@ body {
 .footer-price {
    margin: 0;
 }
+
+@media screen and (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .empty-with-background {
+        display: none;
+    }
+
+    header {
+        height: 4rem;
+    }
+
+    .price-card {
+        background: #020c9d;
+    }
+    
+}
+
