@@ -7,10 +7,10 @@
 body {
   margin: 0; 
   padding: 0;
-  min-height: 75rem;
+  /* min-height: 75rem; */
   background: linear-gradient(180deg, #00098E 0%, #00098E 75%, #0051E6 100%);
-  border: 5px solid #CAC4D0; 
-  border-radius: 10px;
+  /* border: 5px solid #CAC4D0; 
+  border-radius: 10px; */
   color: #f5f5f5;
   font-family: poppins;
   height: auto;
@@ -88,7 +88,7 @@ main {
   background-size: contain; 
   background-position: center; 
   background-repeat: no-repeat;
-  height: 100vh;
+  height: auto;
 }
 /* Companies */
 /* Images Companies */
