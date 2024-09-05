@@ -1,45 +1,22 @@
-@media screen and (min-width: 768px) {
-    .container-with-background {
-        background-color:#4859F2;
-        background-image: url("https://i.ibb.co/K66jJkY/fondo.png");
-        background-size: cover; 
-        background-position: center; 
-        background-repeat: no-repeat;
-        height: 40vh;
-    }
-    
-    header {
-        background: none;
-    }
-
-    .empty-with-background {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 20rem 0;
-    }
-
-    .empty-with-background img {
-        mix-blend-mode: multiply;  
-    }
-
-    main {
-        background: none;
-        margin: 6.5rem 0;
-    }  
-}
-
-
 .card-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 17px;
     margin-top: 2rem;
 }
 
+.empty-with-background {
+    display: none;
+}
+
+header {
+    height: 4rem;
+}
 
 .price-card {
-    width: 244px;
+    width: 238px;
     height: 459px;
     top: 188px;
     left: 70px;
@@ -47,7 +24,7 @@
     border-radius: 5px 0px 0px 0px;
     border: 1px 0px 0px 0px;
     opacity: 0px;
-    background: #00098E;
+    background: #020c9d;
     box-shadow: 0px 4px 4px 0px #00000099;
     padding: 15px;
     display: grid;
@@ -89,23 +66,45 @@
    margin: 0;
 }
 
-@media screen and (max-width: 768px) {
-    .card-container {
-        flex-direction: column;
-        align-items: center;
+@media screen and (min-width: 768px) {
+    .container-with-background {
+        background-color:#4859F2;
+        background-image: url("https://i.ibb.co/K66jJkY/fondo.png");
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat;
+        height: 40vh;
+    }
+    
+    header {
+        background: none;
+        height: auto;
     }
 
     .empty-with-background {
-        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20rem 0;
     }
 
-    header {
-        height: 4rem;
+    .empty-with-background img {
+        mix-blend-mode: multiply;  
+    }
+
+    main {
+        background: none;
+        margin: 6.5rem 0;
+    }
+
+    .card-container {
+        flex-direction: row;
+        gap: 2rem;
     }
 
     .price-card {
-        background: #020c9d;
+        width: 244px;
+        background: #00098E;
     }
-    
 }
 
