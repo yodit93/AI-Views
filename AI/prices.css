@@ -1,0 +1,69 @@
+body {
+    height: au100vhto;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 17px;
+    padding: 0 70px;
+}
+
+@media screen and (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+
+.price-card {
+    width: 244px;
+    height: 459px;
+    top: 188px;
+    left: 70px;
+    gap: 0px;
+    border-radius: 5px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background: #00098E;
+    box-shadow: 0px 4px 4px 0px #00000099;
+    padding: 15px;
+    display: grid;
+    justify-items: center;
+}
+
+.price-card h5 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #63C7FF;
+}
+
+.price { 
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+
+}
+
+.price span {
+    font-size: 16px; 
+}
+
+.price-content { 
+    font-size: 12px;
+    line-height: 25px;
+    letter-spacing: 0.5px;
+}
+
+.contractor-btn-cont.price-page {
+    align-self: flex-end;
+    margin-bottom: 25px;
+}
+
+.footer-price {
+   margin: 0;
+}
