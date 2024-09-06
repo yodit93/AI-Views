@@ -194,15 +194,21 @@ main {
   line-height: 20px;
   letter-spacing: 0.5px;
   text-align: left;
+  color: #f5f5f5;
 }
 
 .custom-accordion .accordion-item {
   margin-bottom: 10px; /* Adds space between accordion items */
   background: none;
+  border: none;
 }
 
 .custom-accordion .accordion-button::after {
   display: none; /* Hides the default dropdown icon */
+}
+
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
 }
 
 .para {
