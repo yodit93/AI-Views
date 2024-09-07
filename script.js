@@ -1,10 +1,16 @@
 const chatbotContainer = document.querySelector('.chatbot-container');
 const chatbotToggleBtn = document.querySelector('.chatbot-toggle-btn img');
+const chatbotBody = document.querySelector('.chatbot-body');
+const chatbotFooter = document.querySelector('.chatbot-footer');
 const chatbotCloseBtn = document.querySelector('.chatbot-close-btn img');
 const requestedInfo = document.querySelector('.info-request');
 const nameInput = document.querySelector('.name');
 const surnameInput = document.querySelector('.surname');
 const continueBtn = document.querySelector('.continue');
+const startBtn = document.querySelector('.start');
+const chatRobot = document.querySelector('.chat-robot');
+const infoRequest = document.querySelector('.info-request');
+
 function toggleChat() {
     chatbotContainer.style.display = chatbotContainer.style.display === 'flex' ? 'none' : 'flex';
     chatbotToggleBtn.style.width = chatbotContainer.style.display === 'flex' ? '100px' : '70px';
@@ -18,19 +24,40 @@ const handleContinue = () => {
         <div class="selector-cont">
             <div class="country-code-selector" onclick="toggleDropdown()"></div>
         </div>
-        <input type="tel" class="phone contact" placeholder="Enter your phone number">
+        <input type="tel" class="phone contact" placeholder="Celular...">
         <div class="dropdown" id="country-code-dropdown">
             <div class="dropdown-item" onclick="selectCountryCode('+1')">+1 (USA)</div>
             <div class="dropdown-item" onclick="selectCountryCode('+34')">+34 (Spain)</div>
             <div class="dropdown-item" onclick="selectCountryCode('+351')">+351 (Portugal)</div>
             <div class="dropdown-item" onclick="selectCountryCode('+91')">+91 (India)</div>
             <div class="dropdown-item" onclick="selectCountryCode('+61')">+81 (Japan)</
-            </div>
+        </div>
     `
-    chatbotContainer.insertBefore(phoneCont, nameInput);
+    chatbotBody.insertBefore(phoneCont, nameInput);
     nameInput.placeholder = "Correo electrónico...";
     surnameInput.placeholder = "Página web (Opcional)...";
-    continueBtn.textContent = "Empezar";
+    continueBtn.style.display =  'none';
+    startBtn.style.display = 'block';
+}
+
+const handleStart = () => {
+    requestedInfo.innerHTML = `
+        Empecemos a ayudarte
+        <span>Puede seleccionar una opción o
+        escribir una pregunta abajo.</span>
+    `;
+    requestedInfo.style.width = '185px';
+    continueBtn.style.display = 'block';
+    startBtn.style.display = 'none';
+    chatbotBody.innerHTML = `
+        <div class="suggestions">
+            <span onclick="sendMessage('Precios de sus agentes')">Precios de sus agentes</span>
+            <span onclick="sendMessage('Formas de contacto')">Formas de contacto</span>
+            <span onclick="sendMessage('¿En qué canales funciona?')">¿En qué canales funciona?</span>
+            <span onclick="sendMessage('Quiero probar sus agentes')">Quiero probar sus agentes</span>
+        </div>
+    `;
+    chatbotFooter.style.display = 'flex';
 }
 
 function toggleDropdown() {
@@ -43,7 +70,6 @@ function selectCountryCode(code) {
     const phoneInput = document.querySelector('.phone');
     phoneInput.value = code;
 }
-
 
 async function sendMessage() {
     const userInput = document.getElementById('userInput');
@@ -92,6 +118,7 @@ async function sendMessage() {
 //     const data = await response.json();
 //     return data.choices[0].text.trim();
 // }
+
 
 async function generateContent(userInput) {
     const apiKey = 'GEMINI_API_KEY';
