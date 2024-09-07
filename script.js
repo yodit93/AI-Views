@@ -4,8 +4,8 @@ const chatbotBody = document.querySelector('.chatbot-body');
 const chatbotFooter = document.querySelector('.chatbot-footer');
 const chatbotCloseBtn = document.querySelector('.chatbot-close-btn img');
 const requestedInfo = document.querySelector('.info-request');
-const nameInput = document.querySelector('.name');
-const surnameInput = document.querySelector('.surname');
+const firstInput = document.querySelector('.name');
+const secondInput = document.querySelector('.surname');
 const continueBtn = document.querySelector('.continue');
 const startBtn = document.querySelector('.start');
 const chatRobot = document.querySelector('.chat-robot');
@@ -17,49 +17,57 @@ function toggleChat() {
 }
 
 const handleContinue = () => {
-    requestedInfo.textContent = "Por favor, coloque su contactos";
-    const phoneCont = document.createElement('div');
-    phoneCont.classList.add('phone-cont');
-    phoneCont.innerHTML = `
-        <div class="selector-cont">
-            <div class="country-code-selector" onclick="toggleDropdown()"></div>
-        </div>
-        <input type="tel" class="phone contact" placeholder="Celular...">
-        <div class="dropdown" id="country-code-dropdown">
-            <div class="dropdown-item" onclick="selectCountryCode('+1')">+1 (USA)</div>
-            <div class="dropdown-item" onclick="selectCountryCode('+34')">+34 (Spain)</div>
-            <div class="dropdown-item" onclick="selectCountryCode('+351')">+351 (Portugal)</div>
-            <div class="dropdown-item" onclick="selectCountryCode('+91')">+91 (India)</div>
-            <div class="dropdown-item" onclick="selectCountryCode('+61')">+81 (Japan)</
-        </div>
-    `
-    chatbotBody.insertBefore(phoneCont, nameInput);
-    nameInput.placeholder = "Correo electrónico...";
-    nameInput.value = "";
-    surnameInput.placeholder = "Página web (Opcional)...";
-    surnameInput.value = "";
-    continueBtn.style.display =  'none';
-    startBtn.style.display = 'block';
+    if(firstInput.reportValidity() && secondInput.reportValidity()) {
+
+        requestedInfo.textContent = "Por favor, coloque su contactos";
+        const phoneCont = document.createElement('div');
+        phoneCont.classList.add('phone-cont');
+        phoneCont.innerHTML = `
+            <div class="selector-cont">
+                <div class="country-code-selector" onclick="toggleDropdown()"></div>
+            </div>
+            <input type="tel" class="phone contact" placeholder="Celular..." required />
+            <div class="dropdown" id="country-code-dropdown">
+                <div class="dropdown-item" onclick="selectCountryCode('+1')">+1 (USA)</div>
+                <div class="dropdown-item" onclick="selectCountryCode('+34')">+34 (Spain)</div>
+                <div class="dropdown-item" onclick="selectCountryCode('+351')">+351 (Portugal)</div>
+                <div class="dropdown-item" onclick="selectCountryCode('+91')">+91 (India)</div>
+                <div class="dropdown-item" onclick="selectCountryCode('+61')">+81 (Japan)</div>
+            </div>
+        `
+        chatbotBody.insertBefore(phoneCont, firstInput);
+        firstInput.placeholder = "Correo electrónico...";
+        firstInput.type = "email";
+        firstInput.value = "";
+        secondInput.placeholder = "Página web (Opcional)...";
+        secondInput.value = "";
+        secondInput.removeAttribute('required');
+        continueBtn.style.display =  'none';
+        startBtn.style.display = 'block';
+    }
 }
 
 const handleStart = () => {
-    requestedInfo.innerHTML = `
-        Empecemos a ayudarte
-        <span>Puede seleccionar una opción o
-        escribir una pregunta abajo.</span>
-    `;
-    requestedInfo.style.width = '185px';
-    continueBtn.style.display = 'block';
-    startBtn.style.display = 'none';
-    chatbotBody.innerHTML = `
-        <div class="suggestions">
-            <span onclick="sendMessage('Precios de sus agentes')">Precios de sus agentes</span>
-            <span onclick="sendMessage('Formas de contacto')">Formas de contacto</span>
-            <span onclick="sendMessage('¿En qué canales funciona?')">¿En qué canales funciona?</span>
-            <span onclick="sendMessage('Quiero probar sus agentes')">Quiero probar sus agentes</span>
-        </div>
-    `;
-    chatbotFooter.style.display = 'flex';
+    const phoneInput = document.querySelector('.phone');
+    if(phoneInput.reportValidity() && firstInput.reportValidity()) {
+        requestedInfo.innerHTML = `
+            Empecemos a ayudarte
+            <span>Puede seleccionar una opción o
+            escribir una pregunta abajo.</span>
+        `;
+        requestedInfo.style.width = '185px';
+        continueBtn.style.display = 'block';
+        startBtn.style.display = 'none';
+        chatbotBody.innerHTML = `
+            <div class="suggestions">
+                <span onclick="sendMessage('Precios de sus agentes')">Precios de sus agentes</span>
+                <span onclick="sendMessage('Formas de contacto')">Formas de contacto</span>
+                <span onclick="sendMessage('¿En qué canales funciona?')">¿En qué canales funciona?</span>
+                <span onclick="sendMessage('Quiero probar sus agentes')">Quiero probar sus agentes</span>
+            </div>
+        `;
+        chatbotFooter.style.display = 'flex';   
+    }
 }
 
 function toggleDropdown() {
@@ -114,6 +122,9 @@ async function sendMessage(inputValue) {
 
         userInput.value = "";
         chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    }
+    else {
+        alert("Please enter a message");
     }
 }
 
