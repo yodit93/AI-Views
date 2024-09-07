@@ -216,21 +216,21 @@
         <span>...</span>
         <button class="close-btn" onclick="toggleChat()">&times;</button>
     </div>
-    <!-- <div class="chatbot-body" id="chatbotBody">
-        <div class="message bot-message">Hello! How can I assist you today?</div>
-    </div>
-    <div class="chatbot-footer">
-        <input type="text" id="userInput" placeholder="Type a message..." onkeydown="if(event.key === 'Enter') sendMessage()">
-        <button btn btn-secondary onclick="sendMessage()"><img src="./Images/Paper Plane.png" alt="send button"></button>
-    </div> -->
     <img class="chat-robot" src="./Images/Frame.svg" alt="">
     <p class="info-request">Hola <span>soy Amelia, tu agente virtual.</span>Te 
       agradecería completar tus datos
       para empezar ayudarte.
     </p>
-    <input type="text" class="contact name" placeholder="Nombres...">
-    <input type="text" class="contact surname" placeholder="Apellidos...">
-    <button class="continue" type="button" onclick="handleContinue()">Continuar</button>
+    <div class="chatbot-body" id="chatbotBody">
+      <input type="text" class="contact name" placeholder="Nombres...">
+      <input type="text" class="contact surname" placeholder="Apellidos...">
+      <button class="continue" type="button" onclick="handleContinue()">Continuar</button>
+      <button class="start" type="button" onclick="handleStart()">Empezar</button>
+    </div>
+    <div class="chatbot-footer">
+      <input type="text" id="userInput" placeholder="Escribe aquí..." onkeydown="if(event.key === 'Enter') sendMessage()">
+      <button onclick="sendMessage()"><img src="./Images/Paper Plane.png" alt="send button"></button>
+    </div>
   </div>
   <button class="chatbot-toggle-btn" onclick="toggleChat()">
     <img
