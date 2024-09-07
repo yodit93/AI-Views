@@ -71,25 +71,42 @@ function selectCountryCode(code) {
     phoneInput.value = code;
 }
 
-async function sendMessage() {
+async function sendMessage(inputValue) {
     const userInput = document.getElementById('userInput');
-    const chatbotBody = document.getElementById('chatbotBody');
-    
-    if (userInput.value.trim() !== "") {
+    const suggestions = document.querySelector('.suggestions');
+    chatRobot.style.display = 'none';
+    infoRequest.style.display = 'none';
+    suggestions.style.display = 'none';
+    const messageToSend = inputValue || userInput.value.trim();  
+    if (messageToSend !== "") {
+        const userMessageCont = document.createElement('div');
+        userMessageCont.classList.add('user-message-cont');
         const userMessage = document.createElement('div');
-        userMessage.classList.add('message', 'user-message');
-        userMessage.textContent = userInput.value;
-        chatbotBody.appendChild(userMessage);
+        userMessage.classList.add('user-message');
+        userMessage.textContent = messageToSend;
+        userMessageCont.appendChild(userMessage);
+        const userprofile = document.createElement('img');
+        userprofile.src = './Images/Frame.png';
+        userprofile.alt = 'user image'; userMessage.classList.add('message', 'user-message');
+        userMessageCont.appendChild(userprofile);
+        chatbotBody.appendChild(userMessageCont);
 
         // Call the AI to generate a response
-        const botResponse = await generateContent(userInput.value);
+        const botResponse = await generateContent(messageToSend);
         console.log(botResponse);
 
         setTimeout(() => {
+            const botMessageCont = document.createElement('div');
+            botMessageCont.classList.add('bot-message-cont');
+            const botImage = document.createElement('img');
+            botImage.src = './Images/chat.png';
+            botImage.alt = 'chatbot image';
+            botMessageCont.appendChild(botImage);
             const botMessage = document.createElement('div');
-            botMessage.classList.add('message', 'bot-message');
+            botMessage.classList.add('bot-message');
             botMessage.textContent = botResponse;
-            chatbotBody.appendChild(botMessage);
+            botMessageCont.appendChild(botMessage);
+            chatbotBody.appendChild(botMessageCont);
             chatbotBody.scrollTop = chatbotBody.scrollHeight;
         }, 1000);
 
