@@ -552,24 +552,6 @@ input {
   color: black;
 }
 
-/* .message {
-  margin: 5px 0;
-  padding: 8px;
-  border-radius: 10px;
-  max-width: 80%;
-}
-
-.bot-message {
-  background-color: #007bff;
-  color: white;
-  align-self: flex-start;
-}
-
-.user-message {
-  background-color: #e0e0e0;
-  align-self: flex-end;
-} */
-
 .user-message-cont, .bot-message-cont {
   display: flex;
   align-items: center; 
@@ -578,7 +560,6 @@ input {
 }
 
 .user-message-cont {
-  /* margin-right: 2rem; */
   justify-content: flex-end;
 }
 
@@ -597,6 +578,7 @@ input {
   overflow: scroll;
   background-color: #D9D9D9;
   padding: 0.7rem;
+  color: #000000;
 }
 
 .user-message-cont img {
