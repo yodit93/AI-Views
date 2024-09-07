@@ -481,6 +481,12 @@ hr {
   gap: 0.4rem;
   overflow: scroll;
   width: 100%;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.chatbot-body::-webkit-scrollbar {
+  display: none;
 }
 
 .suggestions {
@@ -501,6 +507,7 @@ hr {
   line-height: 13.37px;
   text-align: center;
   padding-top: 5px;
+  cursor: pointer;
 }
 
 .suggestions span:nth-child(1) {
@@ -564,7 +571,7 @@ input {
 }
 
 .bot-message-cont {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   
 }
 
@@ -579,6 +586,13 @@ input {
   background-color: #D9D9D9;
   padding: 0.7rem;
   color: #000000;
+  font-size: 12px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.user-message::-webkit-scrollbar, .bot-message::-webkit-scrollbar {
+  display: none;
 }
 
 .user-message-cont img {
