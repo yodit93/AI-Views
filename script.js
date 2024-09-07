@@ -98,28 +98,6 @@ async function sendMessage() {
     }
 }
 
-// async function generateAIResponse(userInput) {
-//     const url = 'https://api.openai.com/v1/completions';
-    
-//     const response = await fetch(url, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Authorization': `Bearer ${apiKey}`
-//         },
-//         body: JSON.stringify({
-//             model: 'text-davinci-003',  // Or another model of your choice
-//             prompt: userInput,
-//             max_tokens: 150,
-//             temperature: 0.7
-//         })
-//     });
-    
-//     const data = await response.json();
-//     return data.choices[0].text.trim();
-// }
-
-
 async function generateContent(userInput) {
     const apiKey = 'GEMINI_API_KEY';
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
