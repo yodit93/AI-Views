@@ -35,7 +35,9 @@ const handleContinue = () => {
     `
     chatbotBody.insertBefore(phoneCont, nameInput);
     nameInput.placeholder = "Correo electrónico...";
+    nameInput.value = "";
     surnameInput.placeholder = "Página web (Opcional)...";
+    surnameInput.value = "";
     continueBtn.style.display =  'none';
     startBtn.style.display = 'block';
 }
