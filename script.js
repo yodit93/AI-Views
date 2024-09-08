@@ -1,5 +1,5 @@
 const chatbotContainer = document.querySelector('.chatbot-container');
-const chatbotToggleBtn = document.querySelector('.chatbot-toggle-btn img');
+const chatbotToggleBtn = document.querySelector('.chatbot-toggle-icon');
 const chatbotBody = document.querySelector('.chatbot-body');
 const chatbotFooter = document.querySelector('.chatbot-footer');
 const chatbotCloseBtn = document.querySelector('.chatbot-close-btn img');
@@ -12,8 +12,8 @@ const chatRobot = document.querySelector('.chat-robot');
 const infoRequest = document.querySelector('.info-request');
 
 function toggleChat() {
-    chatbotContainer.style.display = chatbotContainer.style.display === 'flex' ? 'none' : 'flex';
-    chatbotToggleBtn.style.width = chatbotContainer.style.display === 'flex' ? '100px' : '70px';
+    chatbotContainer.classList.toggle('show');
+    chatbotToggleBtn.classList.toggle('resize');
 }
 
 const handleContinue = () => {
@@ -42,8 +42,8 @@ const handleContinue = () => {
         secondInput.placeholder = "Página web (Opcional)...";
         secondInput.value = "";
         secondInput.removeAttribute('required');
-        continueBtn.style.display =  'none';
-        startBtn.style.display = 'block';
+        continueBtn.classList.add('hide');
+        startBtn.classList.add('block');
     }
 }
 
@@ -55,9 +55,8 @@ const handleStart = () => {
             <span>Puede seleccionar una opción o
             escribir una pregunta abajo.</span>
         `;
-        requestedInfo.style.width = '185px';
-        continueBtn.style.display = 'block';
-        startBtn.style.display = 'none';
+        requestedInfo.classList.add('info-resize');
+        startBtn.classList.add('hide');
         chatbotBody.innerHTML = `
             <div class="suggestions">
                 <span onclick="sendMessage('Precios de sus agentes')">Precios de sus agentes</span>
@@ -66,17 +65,17 @@ const handleStart = () => {
                 <span onclick="sendMessage('Quiero probar sus agentes')">Quiero probar sus agentes</span>
             </div>
         `;
-        chatbotFooter.style.display = 'flex';   
+        chatbotFooter.classList.add('show');   
     }
 }
 
 function toggleDropdown() {
     const dropdown = document.getElementById('country-code-dropdown');
-    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    dropdown.classList.toggle('block');
 }
 
 function selectCountryCode(code) {
-    document.getElementById('country-code-dropdown').style.display = 'none';
+    document.getElementById('country-code-dropdown').classList.remove('block');
     const phoneInput = document.querySelector('.phone');
     phoneInput.value = code;
 }
@@ -84,9 +83,9 @@ function selectCountryCode(code) {
 async function sendMessage(inputValue) {
     const userInput = document.getElementById('userInput');
     const suggestions = document.querySelector('.suggestions');
-    chatRobot.style.display = 'none';
-    infoRequest.style.display = 'none';
-    suggestions.style.display = 'none';
+    chatRobot.classList.add('hide');
+    infoRequest.classList.add('hide');
+    suggestions.classList.add('hide');
     const messageToSend = inputValue || userInput.value.trim();  
     if (messageToSend !== "") {
         const userMessageCont = document.createElement('div');
@@ -164,11 +163,7 @@ async function generateContent(userInput) {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-
         const data = await response.json();
-        console.log(data);  // Log the response data to the console
-
-        // Extract and return the relevant text from the response
         return data.candidates[0].content.parts[0].text;
     } catch (error) {
         console.error('Error generating content:', error);

@@ -617,9 +617,30 @@ input {
   background: none;
 }
 
-.chatbot-toggle-btn img {
+.chatbot-toggle-icon {
   width: 70px;
 }
+
+.resize {
+  width: 100px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  opacity: 1;
+}
+
+.block {
+  display: block;
+}
+
+.info-resize {
+  width: 185px;
+}
+
 
 
 
