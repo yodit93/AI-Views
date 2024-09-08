@@ -82,12 +82,12 @@ function selectCountryCode(code) {
 
 async function sendMessage(inputValue) {
     const userInput = document.getElementById('userInput');
-    const suggestions = document.querySelector('.suggestions');
-    chatRobot.classList.add('hide');
-    infoRequest.classList.add('hide');
-    suggestions.classList.add('hide');
-    const messageToSend = inputValue || userInput.value.trim();  
+    const messageToSend = inputValue || userInput.value.trim(); 
     if (messageToSend !== "") {
+        const suggestions = document.querySelector('.suggestions');
+        chatRobot.classList.add('hide');
+        infoRequest.classList.add('hide');
+        suggestions.classList.add('hide');
         const userMessageCont = document.createElement('div');
         userMessageCont.classList.add('user-message-cont');
         const userMessage = document.createElement('div');
@@ -100,30 +100,29 @@ async function sendMessage(inputValue) {
         userMessageCont.appendChild(userprofile);
         chatbotBody.appendChild(userMessageCont);
 
-        // Call the AI to generate a response
-        const botResponse = await generateContent(messageToSend);
-        console.log(botResponse);
-
-        setTimeout(() => {
-            const botMessageCont = document.createElement('div');
-            botMessageCont.classList.add('bot-message-cont');
-            const botImage = document.createElement('img');
-            botImage.src = './Images/chat.png';
-            botImage.alt = 'chatbot image';
-            botMessageCont.appendChild(botImage);
-            const botMessage = document.createElement('div');
-            botMessage.classList.add('bot-message');
-            botMessage.textContent = botResponse;
-            botMessageCont.appendChild(botMessage);
-            chatbotBody.appendChild(botMessageCont);
-            chatbotBody.scrollTop = chatbotBody.scrollHeight;
-        }, 1000);
-
-        userInput.value = "";
-        chatbotBody.scrollTop = chatbotBody.scrollHeight;
-    }
-    else {
-        alert("Please enter a message");
+        try {
+            const botResponse = await generateContent(messageToSend);
+            if(botResponse) {
+                setTimeout(() => {
+                    const botMessageCont = document.createElement('div');
+                    botMessageCont.classList.add('bot-message-cont');
+                    const botImage = document.createElement('img');
+                    botImage.src = './Images/chat.png';
+                    botImage.alt = 'chatbot image';
+                    botMessageCont.appendChild(botImage);
+                    const botMessage = document.createElement('div');
+                    botMessage.classList.add('bot-message');
+                    botMessage.textContent = botResponse;
+                    botMessageCont.appendChild(botMessage);
+                    chatbotBody.appendChild(botMessageCont);
+                    chatbotBody.scrollTop = chatbotBody.scrollHeight;
+                }, 1000);
+            }
+        }
+        catch (error) {
+            console.log('Error sending message:', error);
+        }
+        userInput.value = "";    
     }
 }
 
