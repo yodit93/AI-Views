@@ -227,10 +227,10 @@
       <button class="continue" type="button" onclick="handleContinue()">Continuar</button>
       <button class="start" type="button" onclick="handleStart()">Empezar</button>
     </div>
-    <div class="chatbot-footer">
+    <form class="chatbot-footer">
       <input type="text" id="userInput" placeholder="Escribe aquí..." onkeydown="if(event.key === 'Enter') sendMessage()" required>
-      <button onclick="sendMessage()"><img src="./Images/Paper Plane.png" alt="send button"></button>
-    </div>
+      <button type="submit" onclick="sendMessage()"><img src="./Images/Paper Plane.png" alt="send button"></button>
+    </form>
   </div>
   <button class="chatbot-toggle-btn" onclick="toggleChat()">
     <img
