@@ -137,7 +137,7 @@ async function generateContent(userInput, userName, userLocation, userWebsite=''
 
     // Define the context for the landing page
     let pageContext = `
-        Context: This is a landing page that promotes intelligent agents trained to solve sales challenges. 
+        Context: This is a landing page named AI VIews that promotes intelligent agents trained to solve sales challenges. 
         The main feature of this page is offering solutions and services related to improving sales through the use of smart agents. 
         The page also includes a call to action for users to hire an agent.
 
