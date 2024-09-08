@@ -10,6 +10,9 @@ const continueBtn = document.querySelector('.continue');
 const startBtn = document.querySelector('.start');
 const chatRobot = document.querySelector('.chat-robot');
 const infoRequest = document.querySelector('.info-request');
+let userName = "";
+let userLocation = "";
+let userWebsite = "";
 
 function toggleChat() {
     chatbotContainer.classList.toggle('show');
@@ -18,7 +21,7 @@ function toggleChat() {
 
 const handleContinue = () => {
     if(firstInput.reportValidity() && secondInput.reportValidity()) {
-
+        userName = firstInput.value;
         requestedInfo.textContent = "Por favor, coloque su contactos";
         const phoneCont = document.createElement('div');
         phoneCont.classList.add('phone-cont');
@@ -28,11 +31,11 @@ const handleContinue = () => {
             </div>
             <input type="tel" class="phone contact" placeholder="Celular..." required />
             <div class="dropdown" id="country-code-dropdown">
-                <div class="dropdown-item" onclick="selectCountryCode('+1')">+1 (USA)</div>
-                <div class="dropdown-item" onclick="selectCountryCode('+34')">+34 (Spain)</div>
-                <div class="dropdown-item" onclick="selectCountryCode('+351')">+351 (Portugal)</div>
-                <div class="dropdown-item" onclick="selectCountryCode('+91')">+91 (India)</div>
-                <div class="dropdown-item" onclick="selectCountryCode('+61')">+81 (Japan)</div>
+                <div class="dropdown-item" onclick="selectCountryCode('+1', event)">USA</div>
+                <div class="dropdown-item" onclick="selectCountryCode('+34', event)">Spain</div>
+                <div class="dropdown-item" onclick="selectCountryCode('+351', event)">Portugal</div>
+                <div class="dropdown-item" onclick="selectCountryCode('+91', event)">India</div>
+                <div class="dropdown-item" onclick="selectCountryCode('+61', event)">Japan</div>
             </div>
         `
         chatbotBody.insertBefore(phoneCont, firstInput);
@@ -67,6 +70,7 @@ const handleStart = () => {
         `;
         chatbotFooter.classList.add('show');   
     }
+    userWebsite = secondInput.value;
 }
 
 function toggleDropdown() {
@@ -74,7 +78,8 @@ function toggleDropdown() {
     dropdown.classList.toggle('block');
 }
 
-function selectCountryCode(code) {
+function selectCountryCode(code, event) {
+    userLocation = event.target.textContent; 
     document.getElementById('country-code-dropdown').classList.remove('block');
     const phoneInput = document.querySelector('.phone');
     phoneInput.value = code;
@@ -101,7 +106,7 @@ async function sendMessage(inputValue) {
         chatbotBody.appendChild(userMessageCont);
 
         try {
-            const botResponse = await generateContent(messageToSend);
+            const botResponse = await generateContent(messageToSend, userName, userLocation, userWebsite);
             if(botResponse) {
                 setTimeout(() => {
                     const botMessageCont = document.createElement('div');
@@ -126,16 +131,24 @@ async function sendMessage(inputValue) {
     }
 }
 
-async function generateContent(userInput) {
+async function generateContent(userInput, userName, userLocation, userWebsite='') {
     const apiKey = 'GEMINI_API_KEY';
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
     // Define the context for the landing page
-    const pageContext = `
+    let pageContext = `
         Context: This is a landing page that promotes intelligent agents trained to solve sales challenges. 
         The main feature of this page is offering solutions and services related to improving sales through the use of smart agents. 
         The page also includes a call to action for users to hire an agent.
+
+        User Information:
+        Name: ${userName}
+        Location: ${userLocation}
     `;
+
+    if (userWebsite) {
+        pageContext += `\nWebsite: ${userWebsite}`;
+    }
 
     // Combine page context with user input
     const prompt = `${pageContext}\nUser Question: ${userInput}`;
