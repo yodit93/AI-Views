@@ -31,6 +31,7 @@ const handleContinue = () => {
             </div>
             <input type="tel" class="phone contact" placeholder="Celular..." required />
             <div class="dropdown" id="country-code-dropdown">
+                <div class="dropdown-item" onclick="selectCountryCode('+57', event)">Colombia</div>
                 <div class="dropdown-item" onclick="selectCountryCode('+1', event)">USA</div>
                 <div class="dropdown-item" onclick="selectCountryCode('+34', event)">Spain</div>
                 <div class="dropdown-item" onclick="selectCountryCode('+351', event)">Portugal</div>
