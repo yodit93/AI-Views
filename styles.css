@@ -456,6 +456,13 @@ hr {
   border: 1px solid #ddd;
   z-index: 1000;
   overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+.dropdown::-webkit-scrollbar {
+  display: none;
 }
 
 .dropdown-item {
