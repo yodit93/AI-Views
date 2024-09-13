@@ -41,6 +41,7 @@ header {
   right: 0;
   top: 0.7rem;
   z-index: 99;
+  transition: background-color 0.5s ease-in-out;
 }
 
 #ss {
@@ -268,6 +269,11 @@ hr {
     width: 3rem;
     height: 3rem;
    
+  }
+
+  .header-scrolled {
+    top: 0;
+    background-color: #6830c2;
   }
 
   .navbar-collapse {
