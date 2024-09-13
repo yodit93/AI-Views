@@ -7,6 +7,7 @@
 body {
   margin: 0; 
   padding: 0;
+  background-color: #00098E;
   background: linear-gradient(180deg, #00098E 0%, #00098E 75%, #0051E6 100%);
   color: #f5f5f5;
   font-family: poppins;
@@ -390,6 +391,12 @@ hr {
 .continue, .start {
   background: linear-gradient(90deg, #002E5A 0%, #00519D 100%);
   color: #FFFFFF;
+  transition: all 0.5s;
+}
+
+.continue:hover, .start:hover {
+  color: #E3E1E1;
+  background: linear-gradient(90deg, #00519D 0%, #002E5A 100%);
 }
 
 .start {
@@ -513,8 +520,7 @@ hr {
 .suggestions span {
   width: 141px;
   height: 25px;
-  border-radius: 3px 0px 0px 0px;
-  border: 1px 0px 0px 0px;
+  border-radius: 3px 0px 0px 0px;;
   color: #C0B2B2;
   border: 1px solid #C0B2B2;
   font-size: 9px;
@@ -523,6 +529,12 @@ hr {
   text-align: center;
   padding-top: 5px;
   cursor: pointer;
+  transition: color, border 0.3s;
+}
+
+.suggestions span:hover {
+  color: darkblue;
+  border: 1px solid darkblue;
 }
 
 .suggestions span:nth-child(1) {
