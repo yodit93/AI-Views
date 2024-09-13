@@ -20,7 +20,7 @@ function toggleChat() {
 }
 
 const handleContinue = () => {
-    if(firstInput.reportValidity() && secondInput.reportValidity()) {
+    if(firstInput.reportValidity()) {
         userName = firstInput.value;
         requestedInfo.textContent = "Por favor, coloque su contactos";
         const phoneCont = document.createElement('div');
@@ -45,7 +45,6 @@ const handleContinue = () => {
         firstInput.value = "";
         secondInput.placeholder = "Página web (Opcional)...";
         secondInput.value = "";
-        secondInput.removeAttribute('required');
         continueBtn.classList.add('hide');
         startBtn.classList.add('block');
     }
