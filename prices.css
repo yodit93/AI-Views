@@ -68,7 +68,6 @@ header {
 
 @media screen and (min-width: 768px) {
     .container-with-background {
-        background-color:#4859F2;
         background-image: url("https://i.ibb.co/K66jJkY/fondo.png");
         background-size: cover; 
         background-position: center; 
