@@ -132,7 +132,7 @@ async function sendMessage(inputValue) {
 }
 
 async function generateContent(userInput, userName, userLocation, userWebsite='') {
-    const apiKey = 'GEMINI_API_KEY';
+    const apiKey = 'AIzaSyCLvJCHHYlkycpevdWSsJ5sDJA3z6tovVw';
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
     // Define the context for the landing page
