@@ -214,7 +214,7 @@
   <div class="chatbot-container">
     <div class="chatbot-header">
         <span>...</span>
-        <button class="close-btn" onclick="toggleChat()">&times;</button>
+        <button class="close-btn">&times;</button>
     </div>
     <img class="chat-robot" src="./Images/Frame.svg" alt="">
     <p class="info-request">Hola <span>soy Amelia, tu agente virtual.</span>Te 
@@ -224,15 +224,15 @@
     <div class="chatbot-body" id="chatbotBody">
       <input type="text" class="contact name" placeholder="Nombres..." required />
       <input type="text" class="contact surname" placeholder="Apellidos..." />
-      <button class="continue" type="button" onclick="handleContinue()">Continuar</button>
-      <button class="start" type="button" onclick="handleStart()">Empezar</button>
+      <button class="continue" type="button">Continuar</button>
+      <button class="start" type="button">Empezar</button>
     </div>
     <div class="chatbot-footer">
-      <input type="text" id="userInput" placeholder="Escribe aquí..." onkeydown="if(event.key === 'Enter') sendMessage()" />
-      <button onclick="sendMessage()"><img src="./Images/Paper Plane.png" alt="send button"></button>
+      <input type="text" id="userInput" placeholder="Escribe aquí..."/>
+      <button class="send-btn"><img src="./Images/Paper Plane.png" alt="send button"></button>
     </div>
   </div>
-  <button class="chatbot-toggle-btn" onclick="toggleChat()">
+  <button class="chatbot-toggle-btn">
     <img
       src="./Images/chat.png"
       alt="Chatbot"
@@ -240,7 +240,7 @@
     />
   </button>
 
-  <script src="script.js"></script>
+  <script src="./dist/bundle.js"></script>
   <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
