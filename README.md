@@ -69,12 +69,15 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 - Git and Code editor.
+- Create [GEMINI_AI_API_KEY](https://aistudio.google.com/app/apikey)
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ``git clone `https://github.com/yodit93/AI-Views.git`
+
+- keep your API key inside .env file as stated in .env.example file.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
