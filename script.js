@@ -1,4 +1,5 @@
 const chatbotContainer = document.querySelector('.chatbot-container');
+const chatbotToggle = document.querySelector('.chatbot-toggle-btn')
 const chatbotToggleBtn = document.querySelector('.chatbot-toggle-icon');
 const chatbotBody = document.querySelector('.chatbot-body');
 const chatbotFooter = document.querySelector('.chatbot-footer');
@@ -10,6 +11,7 @@ const continueBtn = document.querySelector('.continue');
 const startBtn = document.querySelector('.start');
 const chatRobot = document.querySelector('.chat-robot');
 const infoRequest = document.querySelector('.info-request');
+
 let userName = "";
 let userLocation = "";
 let userWebsite = "";
@@ -27,16 +29,16 @@ const handleContinue = () => {
         phoneCont.classList.add('phone-cont');
         phoneCont.innerHTML = `
             <div class="selector-cont">
-                <div class="country-code-selector" onclick="toggleDropdown()"></div>
+                <div class="country-code-selector"></div>
             </div>
             <input type="tel" class="phone contact" placeholder="Celular..." required />
             <div class="dropdown" id="country-code-dropdown">
-                <div class="dropdown-item" onclick="selectCountryCode('+57', event)">Colombia</div>
-                <div class="dropdown-item" onclick="selectCountryCode('+1', event)">USA</div>
-                <div class="dropdown-item" onclick="selectCountryCode('+34', event)">Spain</div>
-                <div class="dropdown-item" onclick="selectCountryCode('+351', event)">Portugal</div>
-                <div class="dropdown-item" onclick="selectCountryCode('+91', event)">India</div>
-                <div class="dropdown-item" onclick="selectCountryCode('+61', event)">Japan</div>
+                <div class="dropdown-item" data-country-code="+57">Colombia</div>
+                <div class="dropdown-item" data-country-code="+1">USA</div>
+                <div class="dropdown-item" data-country-code="+34">Spain</div>
+                <div class="dropdown-item" data-country-code="+351">Portugal</div>
+                <div class="dropdown-item" data-country-code="+91">India</div>
+                <div class="dropdown-item" data-country-code="+61">Japan</div>
             </div>
         `
         chatbotBody.insertBefore(phoneCont, firstInput);
@@ -48,6 +50,14 @@ const handleContinue = () => {
         continueBtn.classList.add('hide');
         startBtn.classList.add('block');
     }
+    document.querySelector('.country-code-selector')?.addEventListener('click', toggleDropdown);
+    const items = document.querySelectorAll('.dropdown-item');
+    items.forEach((item) => {
+        item.addEventListener('click', (event) => {
+            const code = event.target.getAttribute('data-country-code')
+            selectCountryCode(code, event)
+        })
+    });
 }
 
 const handleStart = () => {
@@ -62,15 +72,20 @@ const handleStart = () => {
         startBtn.classList.add('hide');
         chatbotBody.innerHTML = `
             <div class="suggestions">
-                <span onclick="sendMessage('Precios de sus agentes')">Precios de sus agentes</span>
-                <span onclick="sendMessage('Formas de contacto')">Formas de contacto</span>
-                <span onclick="sendMessage('¿En qué canales funciona?')">¿En qué canales funciona?</span>
-                <span onclick="sendMessage('Quiero probar sus agentes')">Quiero probar sus agentes</span>
+                <span>Precios de sus agentes</span>
+                <span>Formas de contacto</span>
+                <span>¿En qué canales funciona?</span>
+                <span>Quiero probar sus agentes</span>
             </div>
         `;
         chatbotFooter.classList.add('show');   
     }
     userWebsite = secondInput.value;
+    document.querySelectorAll('.suggestions span').forEach((span) => {
+        span.addEventListener('click', (event) => {
+            sendMessage(event.target.textContent);
+        })
+    })
 }
 
 function toggleDropdown() {
@@ -87,7 +102,7 @@ function selectCountryCode(code, event) {
 
 async function sendMessage(inputValue) {
     const userInput = document.getElementById('userInput');
-    const messageToSend = inputValue || userInput.value.trim(); 
+    const messageToSend = inputValue || userInput.value.trim();
     if (messageToSend !== "") {
         const suggestions = document.querySelector('.suggestions');
         chatRobot.classList.add('hide');
@@ -132,7 +147,7 @@ async function sendMessage(inputValue) {
 }
 
 async function generateContent(userInput, userName, userLocation, userWebsite='') {
-    const apiKey = 'AIzaSyCLvJCHHYlkycpevdWSsJ5sDJA3z6tovVw';
+    const apiKey = process.env.GEMINI_API_KEY;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
     // Define the context for the landing page
@@ -189,6 +204,21 @@ window.addEventListener('scroll', () => {
         : header.classList.remove('header-scrolled');
 });
 
+chatbotToggle.addEventListener('click', toggleChat);
+continueBtn.addEventListener('click', handleContinue);
+startBtn.addEventListener('click', handleStart);
+
+document.querySelector('.send-btn').addEventListener('click', () => {
+    sendMessage();
+});
+
+document.querySelector('.close-btn').addEventListener('click', toggleChat);
+
+document.querySelector('.chatbot-footer input').addEventListener('keydown', (event) => {
+   if(event.key === 'Enter') {
+    sendMessage();
+   }
+});
 
 
 
