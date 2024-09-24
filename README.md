@@ -1,4 +1,4 @@
-##AI Views
+## AI Views
 
 # 📗 Table of Contents
 
