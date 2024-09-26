@@ -21,7 +21,8 @@
 
 # 📖 AI-Views: <a name="about-project"></a>
 
-> AI-Views is a website that promotes intelligent agents trained to solve sales challenges. The main feature of this project is offering solutions and services related to improving sales through the use of smart agents.
+> AI-Views is a website that promotes intelligent agents trained to solve sales challenges. The main feature of this project is chatbot that provides response for user's questions.
+The goal is offering solutions and services related to improving sales through the use of smart agents.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
