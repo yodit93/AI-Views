@@ -417,6 +417,13 @@ hr {
   padding: 2px;
   border: 1px solid #ddd;
   cursor: pointer;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.dropdown-item img, .dropdown-item span {
+  display: block;
 }
 
 .dropdown-item:hover {
@@ -671,10 +678,35 @@ input {
   .chatbot-container {
     width: 415px;
     height: 450px;
+    gap: 0.7rem;
   }
 
   .contact, .continue, .start {
     width: 245px;
     height: 32px;
+  }
+
+  .selector-cont {
+    width: 30px;
+    height: 32px;
+  }
+
+  .selector-cont::after {
+    height: 25px;
+    right: 300px;
+  }
+
+  .contact.phone {
+    width: 215px;
+  }
+
+  .dropdown {
+    top: 62%;
+  }
+
+  .suggestions span {
+    width: 174px;
+    height: 27px;
+    padding-top: 5px;
   }
 }

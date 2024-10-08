@@ -33,12 +33,30 @@ const handleContinue = () => {
             </div>
             <input type="tel" class="phone contact" placeholder="Celular..." required />
             <div class="dropdown" id="country-code-dropdown">
-                <div class="dropdown-item" data-country-code="+57">Colombia</div>
-                <div class="dropdown-item" data-country-code="+1">USA</div>
-                <div class="dropdown-item" data-country-code="+34">Spain</div>
-                <div class="dropdown-item" data-country-code="+351">Portugal</div>
-                <div class="dropdown-item" data-country-code="+91">India</div>
-                <div class="dropdown-item" data-country-code="+61">Japan</div>
+                <div class="dropdown-item" data-country-code="+57">
+                    <img src="./Images/co.png" alt="Colombia flag" />
+                    <span>Colombia</span>
+                </div>
+                <div class="dropdown-item" data-country-code="+1">
+                    <img src="./Images/us.png" alt="USA flag" />
+                     <span>USA</span>
+                </div>
+                <div class="dropdown-item" data-country-code="+34">
+                    <img src="./Images/es.png" alt="Spain flag" />
+                    <span> Spain</span>
+                </div>
+                <div class="dropdown-item" data-country-code="+351">
+                    <img src="./Images/pt.png" alt="Portugal flag" />
+                    <span> Portugal</span>
+                </div>
+                <div class="dropdown-item" data-country-code="+91">
+                    <img src="./Images/in.png" alt="India flag" />
+                    <span>India</span>
+                </div>
+                <div class="dropdown-item" data-country-code="+61">
+                    <img src="./Images/jp.png" alt="Japang" />
+                    <span> Japan</span>
+                </div>
             </div>
         `
         chatbotBody.insertBefore(phoneCont, firstInput);
