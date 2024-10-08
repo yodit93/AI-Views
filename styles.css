@@ -551,17 +551,11 @@ input {
   height: auto;
   min-height: 45px;
   max-height: 200px;
-  overflow: scroll;
+  overflow: auto;
   background-color: #D9D9D9;
   padding: 0.7rem;
   color: #000000;
-  font-size: 12px;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-.user-message::-webkit-scrollbar, .bot-message::-webkit-scrollbar {
-  display: none;
+  font-size: 12px; 
 }
 
 .user-message-cont img {
