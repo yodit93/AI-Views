@@ -259,71 +259,6 @@ hr {
   align-items: flex-end;
 }
 
-@media (min-width: 768px) {
-  #navbarCollapse {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  #logo {
-    width: 3rem;
-    height: 3rem;
-   
-  }
-
-  .header-scrolled {
-    top: 0;
-    background-color: #6830c2;
-  }
-
-  .navbar-collapse {
-    position: static;
-    background: none; 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .navbar-nav {
-    align-items: center;
-  }
-
-  .intro {
-    font-size: 1.8rem;  
-  }
-
-  .contractor-btn-cont {
-    width: 200px;
-    height: 57px;
-  }
-
-  #contratarAI { 
-    font-size: 18px;
-  }
-
-  .para {
-    font-size: 1.8rem;  
-  }
-
-  main {
-    background-image: url("https://i.ibb.co/8DHhCpb/fondo2.png");
-    background-size: contain; 
-    background-position: center; 
-    background-repeat: no-repeat;
-    height: auto;  
-  }
-
-  #videoAI {
-    height: 75vh;
-    margin: 0
-  
-  }
-
-  .bottom-nav, .last {
-    font-size: 20px;
-  }
-}
-
 /* chatbot styles */
 .chatbot-container {
   position: fixed;
@@ -668,4 +603,78 @@ input {
 
 .info-resize {
   width: 185px;
+}
+@media (min-width: 768px) {
+  #navbarCollapse {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #logo {
+    width: 3rem;
+    height: 3rem;
+   
+  }
+
+  .header-scrolled {
+    top: 0;
+    background-color: #6830c2;
+  }
+
+  .navbar-collapse {
+    position: static;
+    background: none; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .navbar-nav {
+    align-items: center;
+  }
+
+  .intro {
+    font-size: 1.8rem;  
+  }
+
+  .contractor-btn-cont {
+    width: 200px;
+    height: 57px;
+  }
+
+  #contratarAI { 
+    font-size: 18px;
+  }
+
+  .para {
+    font-size: 1.8rem;  
+  }
+
+  main {
+    background-image: url("https://i.ibb.co/8DHhCpb/fondo2.png");
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: auto;  
+  }
+
+  #videoAI {
+    height: 75vh;
+    margin: 0
+  
+  }
+
+  .bottom-nav, .last {
+    font-size: 20px;
+  }
+
+  .chatbot-container {
+    width: 415px;
+    height: 450px;
+  }
+
+  .contact, .continue, .start {
+    width: 245px;
+    height: 32px;
+  }
 }
