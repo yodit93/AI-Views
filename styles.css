@@ -274,6 +274,7 @@ hr {
   width: 325px;
   opacity: 0;
   transition: all 0.3s;
+  overflow: auto;
 }
 
 .chat-robot {
