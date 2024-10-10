@@ -29,7 +29,7 @@ const handleContinue = () => {
         phoneCont.classList.add('phone-cont');
         phoneCont.innerHTML = `
             <div class="selector-cont">
-                <div class="country-code-selector"></div>
+                <div class="country-code-selector blue-circle"></div>
             </div>
             <input type="tel" class="phone contact" placeholder="Celular..." required />
             <div class="dropdown" id="country-code-dropdown">
@@ -68,13 +68,30 @@ const handleContinue = () => {
         continueBtn.classList.add('hide');
         startBtn.classList.add('block');
     }
-    document.querySelector('.country-code-selector')?.addEventListener('click', toggleDropdown);
+    const countryCodeSelector = document.querySelector('.country-code-selector');
+    const phoneInput = document.querySelector('.phone');
+    countryCodeSelector.addEventListener('click', toggleDropdown);
+
+    const selectCountryCode = (code, event) => {
+        countryCodeSelector.classList.remove('blue-circle');
+        countryCodeSelector.innerHTML = event.currentTarget.children[0].outerHTML;
+        userLocation = event.currentTarget.children[1].textContent;
+        document.getElementById('country-code-dropdown').classList.remove('block');
+        phoneInput.value = code;
+    }
     const items = document.querySelectorAll('.dropdown-item');
     items.forEach((item) => {
         item.addEventListener('click', (event) => {
-            const code = event.target.getAttribute('data-country-code')
+            const code = event.currentTarget.getAttribute('data-country-code');
             selectCountryCode(code, event)
         })
+    });
+ 
+    phoneInput.addEventListener('input', (event) => {
+        if (event.target.value === '') {  
+            countryCodeSelector.classList.add('blue-circle');
+            countryCodeSelector.innerHTML = '';
+        }
     });
 }
 
@@ -109,13 +126,6 @@ const handleStart = () => {
 function toggleDropdown() {
     const dropdown = document.getElementById('country-code-dropdown');
     dropdown.classList.toggle('block');
-}
-
-function selectCountryCode(code, event) {
-    userLocation = event.target.textContent; 
-    document.getElementById('country-code-dropdown').classList.remove('block');
-    const phoneInput = document.querySelector('.phone');
-    phoneInput.value = code;
 }
 
 async function sendMessage(inputValue) {
