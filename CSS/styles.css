@@ -46,20 +46,6 @@ header {
   transition: background-color 0.5s ease-in-out;
 }
 
-#ss {
-  margin: 1% 0;
-  width: 159px;
-  height: 35px;
-  border-radius: 6px 0px 0px 0px;
-  background: linear-gradient(90deg, #240466 0%, #4708CC 100%);
-  border: none;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-
 #logo {
   width: 2rem;
   height: 2rem;
