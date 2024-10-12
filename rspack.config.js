@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 module.exports = {
-  entry: './script.js',
+  entry: './JS/script.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
