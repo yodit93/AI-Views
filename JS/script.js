@@ -225,13 +225,6 @@ async function generateContent(userInput, userName, userLocation, userWebsite=''
     }
 }
 
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('.fixed');
-    window.scrollY > 0 
-        ? header.classList.add('header-scrolled') 
-        : header.classList.remove('header-scrolled');
-});
-
 chatbotToggle.addEventListener('click', toggleChat);
 continueBtn.addEventListener('click', handleContinue);
 startBtn.addEventListener('click', handleStart);
