@@ -7,12 +7,14 @@
   <title>AI work</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <!-- poppins font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="styles.css" rel="stylesheet">
+  <link href="./CSS/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/slider.css">
 </head>
 
 <body>
@@ -64,28 +66,110 @@
     </div>
   </header>
   <!-- Companies -->
-  <div class="container">
-    <p class="text">
-      Empresas que confian en nuestros agentes.
-    </p>
-  </div>
+  
   <main>
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col">
-          <img src="https://i.ibb.co/VDwQdqM/tres.png" alt="tres" id="company">
-        </div>
-        <div class="col">
-          <img src="https://i.ibb.co/VDwQdqM/tres.png" alt="tres" id="company">
-        </div>
-        <div class="col">
-          <img src="https://i.ibb.co/qB03VN2/dos.png" alt="dos" id="company">
-        </div>
-        <div class="col">
-          <img src="https://i.ibb.co/7C9rYDH/uno.png" alt="uno" id="company">
+    <section>
+      <div class="row justify-content-md-center">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-9">
+          <h2 class="mb-5 lead text-center fw-medium">Conoce las funciones de nuestros vendedores inteligentes</h2>
         </div>
       </div>
-    </div>
+      <div class="container overflow-hidden">
+        <div class="row gy-4 gy-xl-0">
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 border-bottom border-primary shadow-sm">
+              <div class="card-body text-center p-4 p-xxl-5">
+                <picture>
+                  <img src="/Images/services/Vendedores-automatizados-.webp" width="56" alt="">
+                </picture>
+                <p class="mb-4 mt-4 text-primary lead fw-bold">Vendedores automatizados</p>
+                <p class="mb-4 text-secondary">Nuestros vendedores de inteligencia artificial, esta preparados para atender tus consultas de forma automática por medio de tu web o canales digitales de comunicación con tu cliente.</p>
+                <a href="#!" class="fw-bold text-decoration-none link-primary">
+                  Mas información
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 border-bottom border-primary shadow-sm">
+              <div class="card-body text-center p-4 p-xxl-5">
+                <picture>
+                  <img src="/Images/services/atencion-24-hioras.webp" width="56" alt="">
+                </picture>
+                <h4 class="mb-4 mt-4 text-primary lead fw-bold">Atención 24/7</h4>
+                <p class="mb-4 text-secondary">Asegura que tus clientes reciban atención en cualquier momento del día o la noche. Nuestra solución de inteligencia artificial está siempre activa, permitiendo que los usuarios obtengan soporte inmediato, sin importar la hora ni el lugar, manteniendo tu negocio operativo de manera continua.</p>
+                <a href="#!" class="fw-bold text-decoration-none link-primary">
+                  Mas información
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 border-bottom border-primary shadow-sm">
+              <div class="card-body text-center p-4 p-xxl-5">
+                <picture>
+                  <img src="/Images/services/Atención-personalizada.webp" width="56" alt="">
+                </picture>
+                <h4 class="mb-4 mt-4 text-primary lead fw-bold">Atención personalizada:</h4>
+                <p class="mb-4 text-secondary">Cada cliente es único, y nuestras herramientas lo saben. Los vendedores automatizados utilizan inteligencia artificial para adaptar cada interacción según las preferencias y necesidades del usuario, ofreciendo una experiencia personalizada que genera mayor satisfacción y fidelización.</p>
+                <a href="#!" class="fw-bold text-decoration-none link-primary">
+                  Mas información
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 border-bottom border-primary shadow-sm">
+              <div class="card-body text-center p-4 p-xxl-5">
+                <picture>
+                  <img src="/Images/services/Respuestas-al-instante.webp" width="56" alt="">
+                </picture>
+                <h4 class="mb-4 mt-4 text-primary lead fw-bold">Respuestas al instante:</h4>
+                <p class="mb-4 text-secondary">Olvídate de las largas esperas. Con nuestros vendedores automatizados, tus clientes recibirán respuestas precisas y rápidas a sus preguntas, mejorando la experiencia de atención y facilitando decisiones en tiempo real, lo que se traduce en un mayor compromiso y conversión.</p>
+                <a href="#!" class="fw-bold text-decoration-none link-primary">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <p class="text">
+          Empresas que confian en nuestros agentes.
+        </p>
+      </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col">
+            <img src="https://i.ibb.co/VDwQdqM/tres.png" alt="tres" id="company">
+          </div>
+          <div class="col">
+            <img src="https://i.ibb.co/VDwQdqM/tres.png" alt="tres" id="company">
+          </div>
+          <div class="col">
+            <img src="https://i.ibb.co/qB03VN2/dos.png" alt="dos" id="company">
+          </div>
+          <div class="col">
+            <img src="https://i.ibb.co/7C9rYDH/uno.png" alt="uno" id="company">
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Explains -->
     <div class="container">
       <div class="row justify-content-center middle-part">
@@ -242,6 +326,10 @@
 
   <script src="./dist/bundle.js"></script>
   <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script src="./JS/wow.min.js"></script>
+  <script src="./JS/main.js"></script>
 </body>
 
 </html>
