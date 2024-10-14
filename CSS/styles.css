@@ -646,6 +646,38 @@ input {
   width: 185px;
 }
 
+.card {
+  min-height: 460px;
+}
+
+.footer-contact {
+  height: 5rem;
+}
+
+p {
+  margin: 0;
+}
+
+.card-body {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.card-top {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-body a {
+  position: absolute;
+  bottom: 2rem;
+  left: 47%;
+  transform: translateX(-50%);
+}
+
 
 @media (min-width: 768px) {
   #navbarCollapse {
@@ -736,16 +768,8 @@ input {
     height: 27px;
     padding-top: 5px;
   }
-}
 
-.card {
-  min-height: 460px;
-}
-
-.footer-contact {
-  height: 5rem;
-}
-
-p {
-  margin: 0;
+  .card {
+    min-height: 627px;
+  }
 }
