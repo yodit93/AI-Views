@@ -737,3 +737,7 @@ input {
     padding-top: 5px;
   }
 }
+
+.card {
+  min-height: 460px;
+}
