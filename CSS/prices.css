@@ -69,26 +69,13 @@ header {
 @media screen and (min-width: 768px) {
     .container-with-background {
         background-image: url("https://i.ibb.co/K66jJkY/fondo.png");
-        background-size: cover; 
-        background-position: center; 
+        background-size: contain; 
         background-repeat: no-repeat;
-        height: 40vh;
     }
     
     header {
         background: none;
         height: auto;
-    }
-
-    .empty-with-background {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 20rem 0;
-    }
-
-    .empty-with-background img {
-        mix-blend-mode: multiply;  
     }
 
     main {

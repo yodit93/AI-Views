@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   margin: 0; 
   padding: 0;
@@ -130,7 +131,7 @@ header {
 /* MAIN */
 
 main {
-  margin-bottom: 7rem;
+  margin-bottom: 2rem;
   background: none;
 }
 
@@ -168,7 +169,6 @@ main {
 #footerCol {
   display: flex;
   justify-content: center;
-  margin-top: 5%;
 }
 
 .intro {
@@ -740,4 +740,12 @@ input {
 
 .card {
   min-height: 460px;
+}
+
+.footer-contact {
+  height: 5rem;
+}
+
+p {
+  margin: 0;
 }
