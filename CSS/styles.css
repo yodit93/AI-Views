@@ -29,6 +29,12 @@ a {
 
 /*-------------------*/
 /* HEADER */
+header {
+  background-image: url("https://i.ibb.co/K66jJkY/fondo.png");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
 
 /* Nav styles */
 #navbarCollapse {
@@ -160,6 +166,8 @@ main {
 }
 
 #footerCol {
+  display: flex;
+  justify-content: center;
   margin-top: 5%;
 }
 
@@ -673,7 +681,8 @@ input {
   }
 
   .para {
-    font-size: 1.8rem;  
+    font-size: 1.8rem;
+    text-align: center;
   }
 
   main {
