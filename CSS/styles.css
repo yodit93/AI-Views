@@ -313,12 +313,11 @@ hr {
   height: 412px;
   background-color: #fff;
   border-radius: 10px;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 0.4rem;
   width: 325px;
-  opacity: 0;
   transition: all 0.3s;
   z-index: 4000;
 }
@@ -528,8 +527,7 @@ hr {
 }
 
 .chatbot-footer {
-  display: flex;
-  opacity: 0;
+  display: none;
   width: 100%;
   height: 43px;
   border-radius: 0px 0px 10px 10px;
@@ -619,6 +617,7 @@ input {
   border: none;
   cursor: pointer;
   background: none;
+  z-index: 100;
 }
 
 .chatbot-toggle-icon {
@@ -636,7 +635,7 @@ input {
 }
 
 .show {
-  opacity: 1;
+  display: flex;
 }
 
 .block {
