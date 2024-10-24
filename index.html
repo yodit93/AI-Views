@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Amelia AI</title>
   <meta name="description" content="Descripción de Amelia AI">
-  <link rel="shortcut icon" type="image/x-icon" href="./Images/favicon-dark.webp">  
+  <link rel="shortcut icon" type="image/x-icon" href="./Images/favicon-dark.webp">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -29,7 +29,7 @@
             <img class="logo-header" src="https://i.ibb.co/2N4BQXr/logo.png" alt="Logo" />
           </picture>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapseMobile" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -53,47 +53,53 @@
         </div>
       </div>
     </nav>
-    <!-- Presentation -->
+  </header>
+
+  <main>
+    <!-- Start Landing -->
     <div class="container" id="robots">
       <div class="row">
-        <div class="col-3">
-          <img src="https://i.ibb.co/k9mfZHV/robot1.png" alt="robot1" id="robot1" class="positionrobot">
+        <div class="col-12 col-md-3 d-none d-md-block">
+          <!-- Ocultar en móviles -->
+          <img src="https://i.ibb.co/k9mfZHV/robot1.png" alt="robot1" id="robot1" class="img-fluid positionrobot">
         </div>
-        <div class="col-6" id="presentation">
+        <div class="col-12 col-md-6" id="presentation">
           <div class="d-flex flex-column justify-content-center align-items-center">
-            <p class="intro">Agentes inteligentes, <br/> entrenados para <br/> <span>solucionar tus ventas</span></p>
+            <p class="intro">Agentes inteligentes, <br /> entrenados para <br /> <span>solucionar tus ventas</span></p>
             <div class="contractor-btn-cont"><a href="#" id="contratarAI">Contratar agente</a></div>
           </div>
         </div>
-        <div class="col-3">
-          <img src="https://i.ibb.co/6m6Z98R/robot2.png" alt="robot2" id="robot2" class="positionrobot">
+        <div class="col-12 col-md-3 d-none d-md-block">
+          <!-- Ocultar en móviles -->
+          <img src="https://i.ibb.co/6m6Z98R/robot2.png" alt="robot2" id="robot2" class="img-fluid positionrobot">
         </div>
       </div>
     </div>
-  </header>
-  <!-- Companies -->
-  
-  <main>
-    <section>
+    <!-- End Landing -->
+
+    <!-- Start Services -->
+    <section class="bg-white pt-5 pb-5">
       <div class="row justify-content-md-center">
-        <div class="col-12 col-md-10 col-lg-8 col-xl-9">
-          <h2 class="my-5 lead text-center fw-medium">Conoce las funciones de nuestros vendedores inteligentes</h2>
+        <div class="col-12 col-md-7 col-lg-7 col-xl-7">
+          <h2 class="text-center text-black fw-bold pb-5">Conoce las funciones de nuestros vendedores inteligentes</h2>
         </div>
       </div>
       <div class="container overflow-hidden">
-        <div class="row gy-4 gy-xl-0">
-          <div class="col-12 col-sm-6 col-xl-3">
+        <div class="row gy-4">
+          <div class="col-12 col-sm-6 col-lg-3">
             <div class="card border-0 border-bottom border-primary shadow-sm">
-              <div class="card-body text-center p-4 p-xxl-5">
-                <div class="card-top">
-                  <picture>
-                    <img src="./Images/services/Vendedores-automatizados-.webp" width="56" alt="">
-                  </picture>
-                  <p class="text-primary lead fw-bold">Vendedores automatizados</p>
-                </div>
-                <p class="mb-4 text-secondary">Nuestros vendedores de inteligencia artificial, esta preparados para atender tus consultas de forma automática por medio de tu web o canales digitales de comunicación con tu cliente.</p>
-                <a href="#!" class="fw-bold text-decoration-none link-primary">
-                  Mas información
+              <div class="card-header text-center bg-white border-0">
+                <picture>
+                  <img src="./Images/services/Vendedores-automatizados-.webp" width="56" alt="" class="img-fluid">
+                </picture>
+                <p class="text-primary lead fw-bold">Vendedores automatizados</p>
+              </div>
+              <div class="card-body text-center p-4">
+                <p class="mb-4 text-secondary">Nuestros vendedores de inteligencia artificial están preparados para atender tus consultas de forma automática.</p>
+              </div>
+              <div class="card-footer p-4 text-center">
+                <a href="#!" class="fw-medium text-decoration-none link-primary">
+                  Más información
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
                   </svg>
@@ -101,18 +107,20 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-xl-3">
-            <div class="card border-0 border-bottom border-primary shadow-sm">
-              <div class="card-body text-center p-4 p-xxl-5">
-                <div class="card-top">
-                  <picture>
-                    <img src="./Images/services/atencion-24-hioras.webp" width="56" alt="">
-                  </picture>
-                  <h4 class="text-primary lead fw-bold">Atención 24/7</h4>
-                </div>
-                <p class="mb-4 text-secondary">Asegura que tus clientes reciban atención en cualquier momento del día o la noche. Nuestra solución de inteligencia artificial está siempre activa, permitiendo que los usuarios obtengan soporte inmediato, sin importar la hora ni el lugar, manteniendo tu negocio operativo de manera continua.</p>
-                <a href="#!" class="fw-bold text-decoration-none link-primary">
-                  Mas información
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card border-0 border-bottom border-primary shadow-sm h-100">
+              <div class="card-header text-center bg-white border-0">
+                <picture>
+                  <img src="./Images/services/atencion-24-hioras.webp" width="56" alt="" class="img-fluid">
+                </picture>
+                <h4 class="text-primary lead fw-bold">Atención 24/7</h4>
+              </div>
+              <div class="card-body text-center p-4">
+                <p class="mb-4 text-secondary">Asegura que tus clientes reciban atención en cualquier momento del día o la noche.</p>
+              </div>
+              <div class="card-footer p-4 text-center">
+                <a href="#!" class="fw-medium text-decoration-none link-primary">
+                  Más información
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
                   </svg>
@@ -120,18 +128,21 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-xl-3">
-            <div class="card border-0 border-bottom border-primary shadow-sm">
-              <div class="card-body text-center p-4 p-xxl-5">
-                <div class="card-top">
-                  <picture>
-                    <img src="./Images/services/Atención-personalizada.webp" width="56" alt="">
-                  </picture>
-                  <h4 class="text-primary lead fw-bold">Atención personalizada:</h4>
-                </div>
-                <p class="mb-4 text-secondary">Cada cliente es único, y nuestras herramientas lo saben. Los vendedores automatizados utilizan inteligencia artificial para adaptar cada interacción según las preferencias y necesidades del usuario, ofreciendo una experiencia personalizada que genera mayor satisfacción y fidelización.</p>
-                <a href="#!" class="fw-bold text-decoration-none link-primary">
-                  Mas información
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card border-0 border-bottom border-primary shadow-sm h-100">
+              <div class="card-header text-center bg-white border-0">
+                <picture>
+                  <img src="./Images/services/Atención-personalizada.webp" width="56" alt="" class="img-fluid">
+                </picture>
+                <h4 class="text-primary lead fw-bold">Atención personalizada</h4>
+              </div>
+              <div class="card-body text-center p-4">
+                <p class="mb-4 text-secondary">Las herramientas utilizan inteligencia artificial para adaptar cada interacción a las necesidades del usuario.</p>
+              </div>
+              <div class="card-footer p-4 text-center">
+                <a href="#!" class="fw-medium text-decoration-none link-primary">
+                  Más información
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
                   </svg>
@@ -139,18 +150,20 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-xl-3">
-            <div class="card border-0 border-bottom border-primary shadow-sm">
-              <div class="card-body text-center p-4 p-xxl-5">
-                <div class="card-top">
-                  <picture>
-                    <img src="./Images/services/Respuestas-al-instante.webp" width="56" alt="">
-                  </picture>
-                  <h4 class="text-primary lead fw-bold">Respuestas al instante:</h4>
-                </div>
-                <p class="mb-4 text-secondary">Olvídate de las largas esperas. Con nuestros vendedores automatizados, tus clientes recibirán respuestas precisas y rápidas a sus preguntas, mejorando la experiencia de atención y facilitando decisiones en tiempo real, lo que se traduce en un mayor compromiso y conversión.</p>
-                <a href="#!" class="fw-bold text-decoration-none link-primary">
-                  Learn More
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card border-0 border-bottom border-primary shadow-sm h-100">
+              <div class="card-header text-center bg-white border-0">
+                <picture>
+                  <img src="./Images/services/Respuestas-al-instante.webp" width="56" alt="Atención al instante con vendedores automatizados" class="img-fluid">
+                </picture>
+                <h4 class="text-primary lead fw-bold">Respuestas al instante</h4>
+              </div>
+              <div class="card-body text-center p-4">
+                <p class="mb-4 text-secondary">La inteligencia artificial proporciona respuestas rápidas a preguntas frecuentes, ahorrando tiempo.</p>
+              </div>
+              <div class="card-footer p-4 text-center">
+                <a href="#!" class="fw-medium text-decoration-none link-primary">
+                  Más información
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
                   </svg>
@@ -161,97 +174,64 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="container mt-5">
-        <p class="text">
-          Empresas que confian en nuestros agentes.
-        </p>
-      </div>
-      <div class="row">
-        <div class="container mt-3">
-          <section class="logo-carousel slider" data-arrows="true">
-            <div class="slide col" style="opacity: 0.8;"><img src="./Images/brands/donmaximo.png"></div>
-            <div class="slide col" style="opacity: 0.8;"><img src="./Images/brands/azordev.webp"></div>
-            <div class="slide col" style="opacity: 0.8;"><img src="./Images/brands/donmaximo.png"></div>
-            <div class="slide col" style="opacity: 0.8;"><img src="./Images/brands/azordev.webp"></div>
-            <div class="slide col" style="opacity: 0.8;"><img src="./Images/brands/donmaximo.png"></div>
-            <div class="slide col" style="opacity: 0.8;"><img src="./Images/brands/kuyay.png"></div>
-            <div class="slide col" style="opacity: 0.8;"><img src="./Images/brands/azordev.webp"></div>
-          </section>
+    <!-- End Services -->
+
+    <!-- Start Contact Agent -->
+    <section class="contact-agent" style="background-color: #0411CC;">
+      <div class="container p-4" style="background-image: url('https://i.ibb.co/8DHhCpb/fondo2.png'); background-repeat: no-repeat; background-size:auto;">
+        <div class="">
+          <div class="row justify-content-center align-items-center text-center">
+            <div class="col-12 col-md-6">
+              <div class="d-flex flex-column justify-content-center align-items-center gap-4">
+                <p class="display-6">Impulsa tu negocio ahora mismo con nuestros agentes inteligentes!.</p>
+                <div class="contractor-btn-cont">
+                  <a href="#" class="btn btn-primary">
+                    <p class="fw-medium">Contratar agente</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <img src="https://i.ibb.co/jT22vNT/robot3.png" alt="Agente Inteligente" id="robot3" class="img-fluid" loading="lazy">
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    <!-- End Contact Agent -->
+
+    <!-- Start Lorem Ipsum-->
+    <section class="bg-white py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Image Column -->
+          <div class="col-12 col-md-6 mb-3 mb-md-0 rounded">
+            <img src="https://via.placeholder.com/600x400" alt="Descripción de la imagen" class="img-fluid rounded shadow" loading="lazy">
+          </div>
+          <!-- Text Column -->
+          <div class="col-12 col-md-6">
+            <h2 class="text-primary fw-bold">Dashboard de Métricas Clave</h2>
+            <p class="text-secondary">
+              Accede a un panel dinámico con todas las métricas clave de tu negocio en un solo lugar. Toma decisiones estratégicas con confianza y lleva tu negocio al siguiente nivel. ¡Transforma tu gestión ahora!
+            </p>
+            <a href="#!" class="btn btn-primary mt-4">
+              Más informaciòn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Lorem Ipsum-->
   </main>
-  <!-- Footer -->
-  <footer>
 
-    <div class="container mb-3">
-      <div class="row justify-content-evenly d-flex align-items-center justify-content-center">
-        <div class="col" id="footerCol">
-          <div class="d-flex flex-column justify-content-center align-items-center">
-            <p class="para">Impulsa tu negocio</p>
-            <p class="para para-2">con nuestros agentes</p>
-            <div class="contractor-btn-cont"><a href="#" id="contratarAI">Contratar agente</a></div>
-          </div>
-        </div>
-        <div class="col" id="footerCol">
-          <img src="https://i.ibb.co/jT22vNT/robot3.png" alt="robot3" id="robot3">
-        </div>
-      </div>
-    </div>
-
-    <hr class="separator">
-
-    <section class="d-flex justify-content-between p-4">
-      <div class="me-5">
-        <span>Siguenos en:</span>
-      </div>
-      <div>
-        <a href="" class="text-white me-4">
-          <i class="bi bi-facebook"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="bi bi-instagram"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="bi bi-linkedin"></i>
-        </a>
-      </div>
-      <!-- Right -->
-    </section>
-
-    <div class="container">
-      <div class="row justify-content-center mb-2">
-        <div class="col">
-          <a class="bottom-nav" href="./index.html">Agente AI</a>
-        </div>
-        <div class="col">
-          <a class="bottom-nav" href="./prices.html">Precios</a>
-        </div>
-        <div class="col bottom-nav">
-          Contactos
-        </div>
-        <div class="col bottom-nav">
-          Politicas & privacidad
-        </div>
-      </div>
-    </div>    
-    <!-- Section: Links  -->
-    <div class="d-flex justify-content-evenly align-items-center footer-contact" style="background-color: rgba(0, 0, 0, 0.2)">
-      <p>© 2024 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">Amelia AI</a>
-      </p>
-      <p><i class="fas fa-envelope mr-3"></i>danielmarinliendo97@gmail.com</p>
-      <p><i class="fas fa-phone mr-3"></i>+51 950 353 066</p>
-    </div>
-  </footer>
+  <!-- -->
   <div class="chatbot-container">
     <div class="chatbot-header">
-        <span>...</span>
-        <button class="close-btn">&times;</button>
+      <span>...</span>
+      <button class="close-btn">&times;</button>
     </div>
     <img class="chat-robot" src="./Images/Frame.svg" alt="">
-    <p class="info-request">Hola <span>soy Amelia, tu agente virtual.</span>Te 
+    <p class="info-request">Hola <span>soy Amelia, tu agente virtual.</span>Te
       agradecería completar tus datos
       para empezar ayudarte.
     </p>
@@ -262,22 +242,66 @@
       <button class="start" type="button">Empezar</button>
     </div>
     <div class="chatbot-footer">
-      <input type="text" id="userInput" placeholder="Escribe aquí..."/>
+      <input type="text" id="userInput" placeholder="Escribe aquí..." />
       <button class="send-btn"><img src="./Images/Paper Plane.png" alt="send button"></button>
     </div>
   </div>
   <button class="chatbot-toggle-btn">
-    <img
-      src="./Images/chat.png"
-      alt="Chatbot"
-      class="chatbot-toggle-icon"
-    />
+    <img src="./Images/chat.png" alt="Chatbot" class="chatbot-toggle-icon" />
   </button>
+
+  <!-- Start Footer -->
+  <footer>
+    <section class="bg-white d-flex justify-content-between p-4 flex-wrap border-top">
+      <div class="me-5">
+        <span class="text-secondary">Siguenos en:</span>
+      </div>
+      <div class="">
+        <a href="#" class="me-4">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="#" class="me-4">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="#" class="me-4">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Links -->
+    <div class="container">
+      <div class="row justify-content-center py-1">
+        <div class="col-12 col-sm-6 col-md-3 text-center mb-2 mb-md-0">
+          <a class="fs-6 text-white" href="./index.html">Agente AI</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 text-center mb-2 mb-md-0">
+          <a class="fs-6 text-white" href="./prices.html">Precios</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 text-center mb-2 mb-md-0">
+          <a href="#" class="fs-6 text-white">Contactos</a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 text-center">
+          <a href="#" class="fs-6 text-white">Políticas & Privacidad</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact  -->
+    <div class="d-flex flex-column flex-md-row justify-content-evenly align-items-center footer-contact" style="background-color: rgba(0, 0, 0, 0.2)">
+      <p class="mb-0">© 2024 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Amelia AI</a>
+      </p>
+      <p class="mb-0"><i class="fas fa-envelope me-2"></i>danielmarinliendo97@gmail.com</p>
+      <p class="mb-0"><i class="fas fa-phone me-2"></i>+51 950 353 066</p>
+    </div>
+  </footer>
+  <!-- End Footer -->
 
   <script src="./dist/bundle.js"></script>
   <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="./JS/wow.min.js"></script>
   <script src="./JS/main.js"></script>
 </body>
