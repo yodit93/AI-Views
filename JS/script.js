@@ -174,26 +174,25 @@ async function sendMessage(inputValue) {
     }
 }
 
-async function generateContent(userInput, userName, userLocation, userWebsite='') {
+async function generateContent(userInput, userName, userLocation, userWebsite = '') {
     const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) throw new Error("Missing Gemini API key!");
+
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
     // Define the context for the landing page
-    let pageContext = `
-        Context: This is a landing page named AI VIews that promotes intelligent agents trained to solve sales challenges. 
+    const pageContext = `
+        Context: This is a landing page named AI Views that promotes intelligent agents trained to solve sales challenges. 
         The main feature of this page is offering solutions and services related to improving sales through the use of smart agents. 
         The page also includes a call to action for users to hire an agent.
 
         User Information:
         Name: ${userName}
         Location: ${userLocation}
+        ${userWebsite ? `Website: ${userWebsite}` : ''}
     `;
 
-    if (userWebsite) {
-        pageContext += `\nWebsite: ${userWebsite}`;
-    }
-
-    // Combine page context with user input
+    // Combine context with user input
     const prompt = `${pageContext}\nUser Question: ${userInput}`;
 
     try {
@@ -203,27 +202,26 @@ async function generateContent(userInput, userName, userLocation, userWebsite=''
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                contents: [
-                    {
-                        parts: [
-                            {
-                                text: prompt
-                            }
-                        ]
-                    }
-                ]
+                contents: [{ parts: [{ text: prompt }] }]
             })
         });
 
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            console.log("API Error:", response.status, response.statusText);
+            throw new Error(`API Error: ${response.status} - ${response.statusText}`);
         }
+
         const data = await response.json();
-        return data.candidates[0].content.parts[0].text;
+        console.log("API Response:", data); // Debugging
+
+        // Extract response safely
+        return data?.candidates?.[0]?.content?.parts?.[0]?.text || "No response received.";
     } catch (error) {
-        console.error('Error generating content:', error);
+        console.error('Error generating content:', error.message);
+        return "An error occurred while generating content.";
     }
 }
+
 
 chatbotToggle.addEventListener('click', toggleChat);
 continueBtn.addEventListener('click', handleContinue);

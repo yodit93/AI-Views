@@ -1,10 +1,12 @@
 {
   "devDependencies": {
-    "dotenv": "^16.4.5",
-    "webpack": "^5.94.0",
-    "webpack-cli": "^5.1.4"
+    "dotenv": "^16.4.5"
   },
   "dependencies": {
     "@rspack/cli": "^1.0.5"
+  },
+  "scripts": {
+    "build": "rspack build"
   }
+
 }
