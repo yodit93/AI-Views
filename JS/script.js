@@ -24,14 +24,14 @@ function toggleChat() {
 const handleContinue = () => {
     if(firstInput.reportValidity()) {
         userName = firstInput.value;
-        requestedInfo.textContent = "Por favor, coloque su contactos";
+        requestedInfo.textContent = "Please provide your contact details";
         const phoneCont = document.createElement('div');
         phoneCont.classList.add('phone-cont');
         phoneCont.innerHTML = `
             <div class="selector-cont">
                 <div class="country-code-selector blue-circle"></div>
             </div>
-            <input type="tel" class="phone contact" placeholder="Celular..." required />
+            <input type="tel" class="phone contact" placeholder="Cell phone..." required />
             <div class="dropdown" id="country-code-dropdown">
                 <div class="dropdown-item" data-country-code="+57">
                     <img src="./Images/co.png" alt="Colombia flag" />
@@ -60,10 +60,10 @@ const handleContinue = () => {
             </div>
         `
         chatbotBody.insertBefore(phoneCont, firstInput);
-        firstInput.placeholder = "Correo electrónico...";
+        firstInput.placeholder = "Email...";
         firstInput.type = "email";
         firstInput.value = "";
-        secondInput.placeholder = "Página web (Opcional)...";
+        secondInput.placeholder = "Website (Optional)...";
         secondInput.value = "";
         continueBtn.classList.add('hide');
         startBtn.classList.add('block');
@@ -99,18 +99,17 @@ const handleStart = () => {
     const phoneInput = document.querySelector('.phone');
     if(phoneInput.reportValidity() && firstInput.reportValidity()) {
         requestedInfo.innerHTML = `
-            Empecemos a ayudarte
-            <span>Puede seleccionar una opción o
-            escribir una pregunta abajo.</span>
+            Let's start helping you
+            <span>You can select an option or write a question below.</span>
         `;
         requestedInfo.classList.add('info-resize');
         startBtn.classList.add('hide');
         chatbotBody.innerHTML = `
             <div class="suggestions">
-                <span>Precios de sus agentes</span>
-                <span>Formas de contacto</span>
-                <span>¿En qué canales funciona?</span>
-                <span>Quiero probar sus agentes</span>
+                <span>Prices of your agents</span>
+                <span>Contact methods</span>
+                <span>In which channels does it work?</span>
+                <span>I want to try your agents</span>
             </div>
         `;
         chatbotFooter.classList.add('show');   
@@ -178,7 +177,7 @@ async function generateContent(userInput, userName, userLocation, userWebsite = 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) throw new Error("Missing Gemini API key!");
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-pro-exp-02-05:generateContent?key=${apiKey}`;
 
     // Define the context for the landing page
     const pageContext = `
