@@ -55,7 +55,7 @@ The goal is offering solutions and services related to improving sales through t
 
 > Link to deployed project.
 
-- [Live Demo Link](https://ai-views-one.vercel.app/)
+- [Live Demo Link](https://yodit93.github.io/AI-Views/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
