@@ -106,9 +106,9 @@ const handleStart = () => {
         startBtn.classList.add('hide');
         chatbotBody.innerHTML = `
             <div class="suggestions">
-                <span>Prices of your agents</span>
-                <span>Contact methods</span>
-                <span>In which channels does it work?</span>
+                <span>What types of agents do you sell?</span>
+                <span>Who owns the bot if I buy it?</span>
+                <span>Is this bot GDPR compliant?</span>
                 <span>I want to try your agents</span>
             </div>
         `;
@@ -177,7 +177,7 @@ async function generateContent(userInput, userName, userLocation, userWebsite = 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) throw new Error("Missing Gemini API key!");
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-pro-exp-02-05:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
     // Define the context for the landing page
     const pageContext = `
