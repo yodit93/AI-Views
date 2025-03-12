@@ -539,18 +539,22 @@ hr {
   bottom: 0;
 }
 
-.chatbot-footer input, button {
+.chatbot-footer textarea, button {
   border: none;
   background: none;
 }
 
-.chatbot-footer input {
+.chatbot-footer textarea {
   line-height: 18px;
   letter-spacing: 0.5px;
   height: 80%;
+  padding-top: 8px;
+  overflow: hidden;
+  resize: none;
+  width: 90%;
 }
 
-.chatbot-footer input::selection {
+.chatbot-footer textarea::selection {
   background: none;
 }
 
@@ -560,7 +564,7 @@ hr {
   cursor: pointer;
 }
 
-input {
+input, textarea {
   padding-left: 8px;
   outline: none;
   font-size: 12px;
