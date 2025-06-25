@@ -1,8 +1,8 @@
 const path = require('path');
 const { EnvironmentPlugin } = require('@rspack/core');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv');
 
-// Load environment variables from .env file
 dotenv.config();
 
 module.exports = {
@@ -12,6 +12,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
-  plugins: [new EnvironmentPlugin(['GEMINI_API_KEY'])]
- 
+  plugins: [
+    new EnvironmentPlugin(['GEMINI_API_KEY']),
+    new HtmlWebpackPlugin({
+      template: './index.html',  // uses your root HTML as a template
+      filename: 'index.html'     // outputs to dist/index.html
+    })
+  ]
 };
