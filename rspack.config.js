@@ -23,8 +23,8 @@ module.exports = {
       filename: 'index.html'     // outputs to dist/index.html
     }),
     new HtmlWebpackPlugin({
-      template: './price.html',  // uses your root HTML as a template
-      filename: 'price.html'     // outputs to dist/price.html
+      template: './prices.html',  // uses your root HTML as a template
+      filename: 'prices.html'     // outputs to dist/prices.html
     })
   ]
 };
