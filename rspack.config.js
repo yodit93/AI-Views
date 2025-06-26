@@ -1,30 +1,66 @@
-const path = require('path');
-const { EnvironmentPlugin } = require('@rspack/core');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const dotenv = require('dotenv');
-
-dotenv.config();
+const CopyPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
 module.exports = {
+  mode: 'production',
   entry: {
-    index: './JS/script.js',     // Used in index.html
-    prices: './JS/script.js'     // Used in prices.html too
+    index: ['./JS/script.js', './JS/main.js', './JS/wow.js'],
+    price: './JS/script.js'
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    publicPath: '/',
+    path: path.resolve(__dirname, 'dist'),
     clean: true
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name][ext]'
+        }
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+        options: {
+          sources: {
+            list: [
+              '...',
+              { tag: 'img', attribute: 'src', type: 'src' }
+            ]
+          }
+        }
+      }
+    ]
+  },
   plugins: [
-    new EnvironmentPlugin(['GEMINI_API_KEY']),
     new HtmlWebpackPlugin({
-      template: './index.html',  // uses your root HTML as a template
-      filename: 'index.html'     // outputs to dist/index.html
+      template: './index.html',
+      filename: 'index.html',
+      chunks: ['index']
     }),
     new HtmlWebpackPlugin({
-      template: './prices.html',  // uses your root HTML as a template
-      filename: 'prices.html'     // outputs to dist/prices.html
+      template: './prices.html',
+      filename: 'prices.html',
+      chunks: ['prices']
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'CSS', to: 'css' },
+        { from: 'Images', to: 'assets' },
+        { from: 'favicon.ico', to: '' } // optional
+      ]
     })
-  ]
+  ],
+  resolve: {
+    extensions: ['.js']
+  },
+  devtool: 'source-map'
 };
