@@ -1,12 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   mode: 'production',
   entry: {
-    index: ['./JS/script.js', './JS/main.js', './JS/wow.js'],
-    price: './JS/script.js'
+    index: ['./JS/script.js', './JS/main.js', './JS/wow.min.js'],
+    prices: './JS/script.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -51,13 +50,6 @@ module.exports = {
       filename: 'prices.html',
       chunks: ['prices']
     }),
-    new CopyPlugin({
-      patterns: [
-        { from: 'CSS', to: 'css' },
-        { from: 'Images', to: 'assets' },
-        { from: 'favicon.ico', to: '' } // optional
-      ]
-    })
   ],
   resolve: {
     extensions: ['.js']

@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@rspack/cli": "^1.4.0",
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
     "dotenv": "^16.4.5",
@@ -8,9 +9,6 @@
     "sass": "^1.89.2",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0"
-  },
-  "dependencies": {
-    "@rspack/cli": "^1.0.5"
   },
   "scripts": {
     "build": "rspack build"
